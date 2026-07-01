@@ -2,7 +2,7 @@
 @section('page-title', 'Daftar Buku')
 
 @section('content')
-<div class="d-flex justify-content-between align-items-center mb-4">
+<div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center mb-4 gap-3">
     <div>
         <h4 class="fw-bold mb-1">Daftar Buku <i class="bi bi-book-fill ms-2" style="color:var(--accent);"></i></h4>
         <p class="mb-0" style="color:var(--text-muted);font-size:0.85rem;">{{ $books->count() }} buku tersedia</p>
@@ -18,13 +18,13 @@
 <div class="card mb-4">
     <div class="card-body py-3 px-4">
         <div class="row g-3">
-            <div class="col-md-8">
+            <div class="col-md-8 col-12">
                 <div class="position-relative">
                     <i class="bi bi-search position-absolute" style="top:50%;left:14px;transform:translateY(-50%);color:var(--text-muted);"></i>
                     <input type="text" id="liveSearchInput" class="form-control ps-5" placeholder="Cari judul, penulis, atau kategori...">
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-12">
                 <select id="categoryFilter" class="form-select">
                     <option value="">Semua Kategori</option>
                     @foreach (\App\Models\Category::all() as $cat)

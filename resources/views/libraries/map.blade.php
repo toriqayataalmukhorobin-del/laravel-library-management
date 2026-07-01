@@ -4,12 +4,12 @@
 @section('content')
 <div class="container-fluid py-4">
     <div class="row g-4">
-        <div class="col-lg-8">
+        <div class="col-lg-8 col-12">
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h5 class="mb-0"><i class="bi bi-map me-2" style="color:var(--accent);"></i>Peta Perpustakaan</h5>
                     @if(auth()->user()->isAdmin())
-                    <a href="{{ route('libraries.index') }}" class="btn btn-sm btn-secondary">
+                    <a href="{{ route('libraries.index') }}" class="btn btn-sm btn-secondary d-none d-sm-inline-flex">
                         <i class="bi bi-gear me-1"></i>Kelola
                     </a>
                     @endif
@@ -20,7 +20,7 @@
             </div>
         </div>
 
-        <div class="col-lg-4">
+        <div class="col-lg-4 col-12">
             <div class="card h-100">
                 <div class="card-header">
                     <h5 class="mb-0"><i class="bi bi-list-ul me-2" style="color:var(--accent);"></i>Daftar Perpustakaan</h5>

@@ -60,6 +60,14 @@
                         <button type="submit" class="btn btn-primary btn-lg rounded-4 fw-semibold" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); border: none; padding: 0.875rem; font-size: 1rem; box-shadow: 0 4px 12px rgba(30, 60, 114, 0.3); transition: all 0.3s ease;">
                             <i class="bi bi-box-arrow-in-right me-2"></i>Masuk
                         </button>
+                        <a href="{{ route('google.login') }}" class="btn btn-outline-danger btn-lg rounded-4 fw-semibold" style="padding: 0.875rem; font-size: 1rem; transition: all 0.3s ease;">
+                            <i class="bi bi-google me-2"></i> Masuk dengan Google
+                        </a>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="{{ route('password.request') }}" class="text-decoration-none" style="color: var(--text-muted); font-size: 0.85rem;">
+                            <i class="bi bi-qr-code-scan me-1"></i>Lupa Password via QR Code
+                        </a>
                     </div>
                 </form>
                 <div class="text-center mt-4">

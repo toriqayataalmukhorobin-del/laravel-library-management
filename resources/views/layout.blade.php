@@ -677,12 +677,28 @@
             .content-area { padding: 20px; }
             .top-bar { padding: 12px 20px; }
             .top-bar .page-title-bar { font-size: 1rem; }
+            .clock-display { padding: 6px 12px; font-size: 0.85rem; }
+            .icon-btn { width: 36px; height: 36px; font-size: 0.95rem; }
+            .sidebar-brand .brand-icon { width: 40px; height: 40px; font-size: 1.1rem; }
+            .sidebar-link { padding: 10px 16px; font-size: 0.85rem; }
+            .sidebar-link i { font-size: 1rem; }
         }
 
         @media (max-width: 576px) {
             .content-area { padding: 16px; }
             .stat-card { padding: 20px; }
             .card { border-radius: 16px !important; }
+            .top-bar-right { gap: 8px; }
+            .clock-display { display: none; }
+            .btn { padding: 0.5rem 1rem; font-size: 0.85rem; }
+            .form-control, .form-select { padding: 0.6rem 0.8rem; font-size: 0.9rem; }
+            .table { font-size: 0.85rem; }
+            .table thead th { font-size: 0.7rem; padding: 0.5rem; }
+            .table td { padding: 0.5rem; }
+        }
+
+        @media (max-width: 992px) {
+            .col-lg-8, .col-lg-4 { width: 100% !important; }
         }
 
         /* ====== DROPDOWN MENU ====== */
@@ -770,6 +786,7 @@
             to { transform: rotate(360deg); }
         }
     </style>
+    @stack('styles')
 </head>
 <body>
 
@@ -798,6 +815,9 @@
         <a href="{{ url('/dashboard') }}" class="sidebar-link {{ request()->is('dashboard') ? 'active' : '' }}">
             <i class="bi bi-grid-fill"></i> Dashboard
         </a>
+        <a href="{{ route('profile.index') }}" class="sidebar-link {{ request()->is('profile') ? 'active' : '' }}">
+            <i class="bi bi-person-circle"></i> Profil Saya
+        </a>
         <a href="{{ route('books.index') }}" class="sidebar-link {{ request()->is('books*') ? 'active' : '' }}">
             <i class="bi bi-book-fill"></i> Daftar Buku
         </a>
@@ -807,6 +827,9 @@
 
         @if(Auth::user()->isAdmin())
         <div class="nav-section-title">Manajemen</div>
+        <a href="{{ route('admin.scanner') }}" class="sidebar-link {{ request()->is('admin/scanner') ? 'active' : '' }}">
+            <i class="bi bi-upc-scan"></i> Scanner Kunjungan
+        </a>
         <a href="{{ route('categories.index') }}" class="sidebar-link {{ request()->is('categories*') ? 'active' : '' }}">
             <i class="bi bi-tags-fill"></i> Kategori
         </a>

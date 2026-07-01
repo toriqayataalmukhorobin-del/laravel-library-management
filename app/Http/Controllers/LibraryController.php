@@ -36,8 +36,10 @@ class LibraryController extends Controller
             'description' => 'nullable|string',
             'image' => 'nullable|string|max:255',
             'opening_hours' => 'nullable|string|max:255',
-            'is_active' => 'boolean'
+            'is_active' => 'sometimes|boolean'
         ]);
+
+        $validated['is_active'] = $request->has('is_active');
 
         Library::create($validated);
 
@@ -61,8 +63,10 @@ class LibraryController extends Controller
             'description' => 'nullable|string',
             'image' => 'nullable|string|max:255',
             'opening_hours' => 'nullable|string|max:255',
-            'is_active' => 'boolean'
+            'is_active' => 'sometimes|boolean'
         ]);
+
+        $validated['is_active'] = $request->has('is_active');
 
         $library->update($validated);
 

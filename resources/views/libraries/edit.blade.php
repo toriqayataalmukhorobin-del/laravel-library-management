@@ -52,7 +52,8 @@
                             <input type="url" name="image" class="form-control" value="{{ old('image', $library->image) }}">
                         </div>
                         <div class="form-check form-switch mb-3">
-                            <input class="form-check-input" type="checkbox" name="is_active" id="is_active" {{ $library->is_active ? 'checked' : '' }}>
+                            <input type="hidden" name="is_active" value="0">
+                            <input class="form-check-input" type="checkbox" name="is_active" id="is_active" value="1" {{ $library->is_active ? 'checked' : '' }}>
                             <label class="form-check-label" for="is_active">Aktif</label>
                         </div>
                         <div class="d-flex gap-2">
