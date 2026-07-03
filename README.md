@@ -1,3 +1,122 @@
+
+# 📚 Sistem Manajemen Perpustakaan (Laravel)
+
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=24&pause=1000&color=36BCF7&center=true&vCenter=true&width=700&lines=Aplikasi+Perpustakaan+Berbasis+Web;Dibuat+dengan+Laravel+Framework;Sistem+Peminjaman+Buku+Digital" alt="Typing SVG" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Framework-Laravel-FF2D20?style=for-the-badge&logo=laravel" alt="Laravel" />
+  <img src="https://img.shields.io/badge/Database-MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
+  <img src="https://img.shields.io/badge/Status-Development-orange?style=for-the-badge" alt="Status" />
+</p>
+
+---
+
+### 📝 Tentang Proyek
+
+Aplikasi ini adalah **Sistem Informasi Manajemen Perpustakaan** yang dirancang untuk mendigitalisasi proses administrasi pada perpustakaan sekolah atau umum. Sistem ini mempermudah pengelolaan data buku, pencatatan anggota, hingga transaksi peminjaman secara *real-time*.
+
+---
+
+### 🚀 Fitur Utama Aplikasi
+
+- 🔐 **Sistem Autentikasi:** Login dan registrasi yang aman untuk Admin dan Anggota Perpustakaan.
+- 📖 **Manajemen Buku (CRUD):** Mengelola data buku, kategori, penerbit, dan penulis secara terstruktur.
+- 🔄 **Transaksi Peminjaman:** Pencatatan otomatis untuk buku yang dipinjam, batas waktu pengembalian, dan riwayat sanksi/denda.
+- 📊 **Dashboard Statistik:** Halaman ringkasan informasi jumlah total buku, anggota aktif, dan grafik peminjaman.
+
+---
+
+### 🛠️ Kebutuhan Sistem (Tech Stack)
+
+<p align="left">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=php,laravel,mysql,html,css,js,bootstrap,vscode&theme=dark" />
+  </a>
+</p>
+
+| Komponen | Versi / Kebutuhan |
+| :--- | :--- |
+| **Bahasa Pemrograman** | PHP >= 8.1 |
+| **Framework** | Laravel >= 10.x |
+| **Database Server** | MySQL / MariaDB |
+| **Package Manager** | Composer |
+| **Local Server** | XAMPP / Laragon |
+
+---
+
+## 💻 Panduan Cara Pemasangan (Lokal)
+
+Ikuti langkah-langkah di bawah ini secara urut untuk menjalankan aplikasi ini di komputer kamu:
+
+### 1. Unduh (Clone) Repositori
+Buka terminal, Git Bash, atau Command Prompt (CMD), lalu jalankan perintah berikut:
+```bash
+git clone [https://github.com/toriqayataalmukhorobin-del/laravel-library-management.git](https://github.com/toriqayataalmukhorobin-del/laravel-library-management.git)
+cd laravel-library-management
+
+```
+### 2. Pasang Package Dependency
+Unduh semua pustaka (*library*) PHP yang dibutuhkan oleh Laravel menggunakan Composer:
+```bash
+composer install
+
+```
+### 3. Konfigurasi Environment File
+Salin file template konfigurasi bawaan untuk membuat file .env baru:
+```bash
+cp .env.example .env
+
+```
+Buka file .env tersebut menggunakan code editor (seperti VS Code) lalu sesuaikan bagian konfigurasi database berikut:
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=db_perpustakaan
+DB_USERNAME=root
+DB_PASSWORD=
+
+```
+> ⚠️ **PENTING:** Buka aplikasi **XAMPP**, aktifkan Apache dan MySQL, lalu masuk ke localhost/phpmyadmin. Buatlah sebuah database baru yang kosong dengan nama db_perpustakaan.
+> 
+### 4. Buat Application Security Key
+Jalankan perintah ini untuk membuat kunci keamanan enkripsi aplikasi:
+```bash
+php artisan key:generate
+
+```
+### 5. Migrasi dan Pengisian Database
+Buat semua tabel perpustakaan secara otomatis ke dalam database beserta data awal/sampelnya (*seeding*):
+```bash
+php artisan migrate --seed
+
+```
+### 6. Hubungkan Folder Penyimpanan (Opsional)
+Jika aplikasi kamu memiliki fitur unggah gambar (seperti foto sampul buku atau foto profil), jalankan perintah tautan ini:
+```bash
+php artisan storage:link
+
+```
+### 7. Jalankan Server Lokal
+Nyalakan server development internal Laravel:
+```bash
+php artisan serve
+
+```
+Aplikasi sekarang sudah aktif! Buka browser kamu dan akses tautan berikut:
+👉 **http://127.0.0.1:8000**
+## 📁 Struktur Dokumen Utama
+ * app/Http/Controllers — Berisi logika utama aplikasi untuk mengatur sirkulasi buku dan user.
+ * database/migrations — Cetak biru (*blueprint*) pembuatan tabel database perpustakaan.
+ * resources/views — Tampilan antarmuka (*user interface*) menggunakan Blade template Laravel.
+ * routes/web.php — Berisi pengaturan rute URL untuk menghubungkan halaman web.
+```
+
+```
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -56,3 +175,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
